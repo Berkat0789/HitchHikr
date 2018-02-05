@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet weak var mapview: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapview.delegate = self
 
     }//--End view did load
 

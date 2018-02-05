@@ -13,6 +13,10 @@
 		B42F7DC32028AAAC00DCF2EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42F7DC12028AAAC00DCF2EB /* LaunchScreen.storyboard */; };
 		B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9C42028AF52001B7A0D /* HomeVC.swift */; };
 		B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9C62028B122001B7A0D /* roundedImage.swift */; };
+		B455E9C92028B727001B7A0D /* gradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9C82028B727001B7A0D /* gradientView.swift */; };
+		B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */; };
+		B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CC2028BF79001B7A0D /* circleView.swift */; };
+		B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		B42F7DC42028AAAC00DCF2EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B455E9C42028AF52001B7A0D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		B455E9C62028B122001B7A0D /* roundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedImage.swift; sourceTree = "<group>"; };
+		B455E9C82028B727001B7A0D /* gradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradientView.swift; sourceTree = "<group>"; };
+		B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowView.swift; sourceTree = "<group>"; };
+		B455E9CC2028BF79001B7A0D /* circleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleView.swift; sourceTree = "<group>"; };
+		B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowButton.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				B455E9C62028B122001B7A0D /* roundedImage.swift */,
+				B455E9C82028B727001B7A0D /* gradientView.swift */,
+				B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */,
+				B455E9CC2028BF79001B7A0D /* circleView.swift */,
+				B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,8 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */,
+				B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */,
 				B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */,
 				B42F7DB92028AAAC00DCF2EB /* AppDelegate.swift in Sources */,
+				B455E9C92028B727001B7A0D /* gradientView.swift in Sources */,
+				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
 				B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
