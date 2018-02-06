@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RevealingSplashView
 
 class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -20,8 +21,14 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var locationAuth  = CLLocationManager.authorizationStatus()
     var locationRadius: Double = 1000
     
+    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.heartBeat
+        revealingSplashView.startAnimation()
+        revealingSplashView.heartAttack = true
         
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
