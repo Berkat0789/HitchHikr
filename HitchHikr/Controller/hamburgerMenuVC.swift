@@ -16,5 +16,13 @@ class hamburgerMenuVC: UIViewController {
         self.revealViewController().rearViewRevealWidth = self.view.frame.width - 40
 
     }//--end controller
+    
+//--Actions
+    @IBAction func signUpPressed(_ sender: Any) {
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginVC")
+        present(loginVC!, animated: true, completion: nil)
+        
+    }
+    
 
 }

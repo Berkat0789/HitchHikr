@@ -10,10 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HomeVC: UIViewController, MKMapViewDelegate {
+class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapview: MKMapView!
     @IBOutlet weak var menuButton: UIButton!
+
+//--Variables and arrays
+    var locationManager = CLLocationManager()
+    var locationAuth  = CLLocationManager.authorizationStatus()
+    var locationRadius: Double = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +26,47 @@ class HomeVC: UIViewController, MKMapViewDelegate {
         menuButton.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-        
-        
         mapview.delegate = self
-
+        AuthorizeLocationService()
     }//--End view did load
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if locationAuth == .authorizedAlways || locationAuth == .authorizedWhenInUse {
+            GetUserCurrentLocation()
+        } else {
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
+//--Protocol conforming function
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        GetUserCurrentLocation()
+    }
+    
+//--Actions
+
+    @IBAction func centerUserLocationPressed(_ sender: Any) {
+        GetUserCurrentLocation()
+    }
+    //Gestures and animatons
+    
+//--Selectors
+    
+//--View update functions
+    
+    func AuthorizeLocationService() {
+        if locationAuth == .notDetermined {
+            locationManager.requestAlwaysAuthorization()
+        } else {
+            return
+        }
+    }
+    func GetUserCurrentLocation() {
+        guard let usercurrentLocation = locationManager.location?.coordinate else{return}
+        let userLocationRaduis = MKCoordinateRegionMakeWithDistance(usercurrentLocation, locationRadius * 2.0, locationRadius * 2.0)
+        mapview.setRegion(userLocationRaduis, animated: true)
+    }
+    
+
 
 }//end controller 

@@ -23,6 +23,7 @@
 		B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03097202A36CB00F48A52 /* yourTripsVC.swift */; };
 		B4A0309A202A370A00F48A52 /* helpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03099202A370A00F48A52 /* helpVc.swift */; };
 		B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309B202A374E00F48A52 /* settingsVC.swift */; };
+		B4A0309E202A3E8200F48A52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309D202A3E8200F48A52 /* LoginVC.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		B4A03097202A36CB00F48A52 /* yourTripsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourTripsVC.swift; sourceTree = "<group>"; };
 		B4A03099202A370A00F48A52 /* helpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpVc.swift; sourceTree = "<group>"; };
 		B4A0309B202A374E00F48A52 /* settingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
+		B4A0309D202A3E8200F48A52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				B4A03097202A36CB00F48A52 /* yourTripsVC.swift */,
 				B4A03099202A370A00F48A52 /* helpVc.swift */,
 				B4A0309B202A374E00F48A52 /* settingsVC.swift */,
+				B4A0309D202A3E8200F48A52 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			files = (
 				B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */,
 				B4A0309A202A370A00F48A52 /* helpVc.swift in Sources */,
+				B4A0309E202A3E8200F48A52 /* LoginVC.swift in Sources */,
 				B4A03096202A366E00F48A52 /* paymentsVC.swift in Sources */,
 				B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */,
 				B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */,
