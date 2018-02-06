@@ -17,6 +17,12 @@
 		B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */; };
 		B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CC2028BF79001B7A0D /* circleView.swift */; };
 		B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */; };
+		B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A030902029F36F00F48A52 /* SWRevealViewController.m */; };
+		B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03093202A2A9B00F48A52 /* hamburgerMenuVC.swift */; };
+		B4A03096202A366E00F48A52 /* paymentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03095202A366E00F48A52 /* paymentsVC.swift */; };
+		B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03097202A36CB00F48A52 /* yourTripsVC.swift */; };
+		B4A0309A202A370A00F48A52 /* helpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03099202A370A00F48A52 /* helpVc.swift */; };
+		B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309B202A374E00F48A52 /* settingsVC.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,14 @@
 		B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowView.swift; sourceTree = "<group>"; };
 		B455E9CC2028BF79001B7A0D /* circleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleView.swift; sourceTree = "<group>"; };
 		B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowButton.swift; sourceTree = "<group>"; };
+		B4A0308F2029F36E00F48A52 /* HitchHikr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HitchHikr-Bridging-Header.h"; sourceTree = "<group>"; };
+		B4A030902029F36F00F48A52 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B4A030912029F36F00F48A52 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B4A03093202A2A9B00F48A52 /* hamburgerMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hamburgerMenuVC.swift; sourceTree = "<group>"; };
+		B4A03095202A366E00F48A52 /* paymentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentsVC.swift; sourceTree = "<group>"; };
+		B4A03097202A36CB00F48A52 /* yourTripsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yourTripsVC.swift; sourceTree = "<group>"; };
+		B4A03099202A370A00F48A52 /* helpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpVc.swift; sourceTree = "<group>"; };
+		B4A0309B202A374E00F48A52 /* settingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -107,6 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				B455E9C42028AF52001B7A0D /* HomeVC.swift */,
+				B4A03093202A2A9B00F48A52 /* hamburgerMenuVC.swift */,
+				B4A03095202A366E00F48A52 /* paymentsVC.swift */,
+				B4A03097202A36CB00F48A52 /* yourTripsVC.swift */,
+				B4A03099202A370A00F48A52 /* helpVc.swift */,
+				B4A0309B202A374E00F48A52 /* settingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -140,6 +159,9 @@
 		B455E9C22028AEB2001B7A0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B4A030912029F36F00F48A52 /* SWRevealViewController.h */,
+				B4A030902029F36F00F48A52 /* SWRevealViewController.m */,
+				B4A0308F2029F36E00F48A52 /* HitchHikr-Bridging-Header.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,6 +208,7 @@
 				TargetAttributes = {
 					B42F7DB42028AAAC00DCF2EB = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -289,12 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */,
+				B4A0309A202A370A00F48A52 /* helpVc.swift in Sources */,
+				B4A03096202A366E00F48A52 /* paymentsVC.swift in Sources */,
 				B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */,
 				B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */,
+				B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */,
+				B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */,
 				B42F7DB92028AAAC00DCF2EB /* AppDelegate.swift in Sources */,
 				B455E9C92028B727001B7A0D /* gradientView.swift in Sources */,
 				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
+				B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */,
 				B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */,
+				B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +461,7 @@
 			baseConfigurationReference = 8CC98992B90FFB2F4F6ED4DF /* Pods-HitchHikr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
@@ -439,6 +469,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HitchHikr/Resources/HitchHikr-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,6 +481,7 @@
 			baseConfigurationReference = 1FF5454021D0464E8DFB13F3 /* Pods-HitchHikr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
@@ -456,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HitchHikr/Resources/HitchHikr-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
