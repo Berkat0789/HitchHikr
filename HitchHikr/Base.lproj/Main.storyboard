@@ -91,7 +91,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QL9-20-zSi">
                                             <rect key="frame" x="24" y="318" width="327" height="100"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I63-5r-DFY">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I63-5r-DFY" customClass="RoundedtextField" customModule="HitchHikr" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="fd2-MN-Tyo"/>
@@ -100,7 +100,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MtM-ZG-EKo">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MtM-ZG-EKo" customClass="RoundedtextField" customModule="HitchHikr" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="55" width="327" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="VwH-Sj-T47"/>
@@ -155,6 +155,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cvn-qA-pVH"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="I63-5r-DFY" id="uCY-fb-HuI"/>
+                        <outlet property="passwordField" destination="MtM-ZG-EKo" id="klX-6K-PSt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg2-3D-E5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

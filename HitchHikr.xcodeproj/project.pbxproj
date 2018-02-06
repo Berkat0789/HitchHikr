@@ -24,6 +24,8 @@
 		B4A0309A202A370A00F48A52 /* helpVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03099202A370A00F48A52 /* helpVc.swift */; };
 		B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309B202A374E00F48A52 /* settingsVC.swift */; };
 		B4A0309E202A3E8200F48A52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309D202A3E8200F48A52 /* LoginVC.swift */; };
+		B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309F202A454000F48A52 /* RoundedtextField.swift */; };
+		B4A030A2202A499700F48A52 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		B4A03099202A370A00F48A52 /* helpVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpVc.swift; sourceTree = "<group>"; };
 		B4A0309B202A374E00F48A52 /* settingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsVC.swift; sourceTree = "<group>"; };
 		B4A0309D202A3E8200F48A52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		B4A0309F202A454000F48A52 /* RoundedtextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedtextField.swift; sourceTree = "<group>"; };
+		B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,11 +140,13 @@
 		B455E9BF2028AEA1001B7A0D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */,
 				B455E9C62028B122001B7A0D /* roundedImage.swift */,
 				B455E9C82028B727001B7A0D /* gradientView.swift */,
 				B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */,
 				B455E9CC2028BF79001B7A0D /* circleView.swift */,
 				B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */,
+				B4A0309F202A454000F48A52 /* RoundedtextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,10 +326,12 @@
 				B4A03096202A366E00F48A52 /* paymentsVC.swift in Sources */,
 				B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */,
 				B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */,
+				B4A030A2202A499700F48A52 /* KeyboardBoundView.swift in Sources */,
 				B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */,
 				B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */,
 				B42F7DB92028AAAC00DCF2EB /* AppDelegate.swift in Sources */,
 				B455E9C92028B727001B7A0D /* gradientView.swift in Sources */,
+				B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */,
 				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
 				B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */,
 				B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */,
