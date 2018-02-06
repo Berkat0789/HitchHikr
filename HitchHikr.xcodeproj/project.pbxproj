@@ -26,6 +26,8 @@
 		B4A0309E202A3E8200F48A52 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309D202A3E8200F48A52 /* LoginVC.swift */; };
 		B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A0309F202A454000F48A52 /* RoundedtextField.swift */; };
 		B4A030A2202A499700F48A52 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */; };
+		B4A030A4202A60FE00F48A52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4A030A3202A60FE00F48A52 /* GoogleService-Info.plist */; };
+		B4A030A6202A622D00F48A52 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A030A5202A622D00F48A52 /* DataService.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		B4A0309D202A3E8200F48A52 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B4A0309F202A454000F48A52 /* RoundedtextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedtextField.swift; sourceTree = "<group>"; };
 		B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		B4A030A3202A60FE00F48A52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4A030A5202A622D00F48A52 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 				B42F7DBF2028AAAC00DCF2EB /* Assets.xcassets */,
 				B42F7DC12028AAAC00DCF2EB /* LaunchScreen.storyboard */,
 				B42F7DC42028AAAC00DCF2EB /* Info.plist */,
+				B4A030A3202A60FE00F48A52 /* GoogleService-Info.plist */,
 			);
 			path = HitchHikr;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 		B455E9C32028AEBA001B7A0D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B4A030A5202A622D00F48A52 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42F7DC32028AAAC00DCF2EB /* LaunchScreen.storyboard in Resources */,
+				B4A030A4202A60FE00F48A52 /* GoogleService-Info.plist in Resources */,
 				B42F7DC02028AAAC00DCF2EB /* Assets.xcassets in Resources */,
 				B42F7DBE2028AAAC00DCF2EB /* Main.storyboard in Resources */,
 			);
@@ -336,6 +343,7 @@
 				B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */,
 				B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */,
 				B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */,
+				B4A030A6202A622D00F48A52 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
