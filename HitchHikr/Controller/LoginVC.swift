@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var emailField: RoundedtextField!
     @IBOutlet weak var passwordField: RoundedtextField!
+    @IBOutlet weak var segmantedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,42 @@ class LoginVC: UIViewController, UITextFieldDelegate{
     @IBAction func closePressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func login_sognupPresed(_ sender: Any) {
+        guard let email = emailField.text, emailField.text != "" else {return}
+        guard let password = passwordField.text, passwordField.text != "" else{return}
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+            if error != nil {
+                guard let errorCode = AuthErrorCode(rawValue: error!._code) else {return}
+                switch errorCode {
+                case .emailAlreadyInUse:
+                    print("email already in use")
+                case .weakPassword:
+                    print("password needs to be 8 or more characters")
+                case .invalidEmail:
+                    print("email is invalid")
+                default:
+                    print("Please check credentials and try again")
+                }
+                
+            }else {
+                if self.segmantedControl.selectedSegmentIndex == 0 {
+                    let userData = ["providerID" : (user?.providerID)!, "email" :email]
+                    DataService.instance.createDBUser(uid: (user?.uid)!, userData: userData, isDriver: false)
+                }else {
+                    //Segmented is 1(Driver)
+                    let userData = ["providerID" : (user?.providerID)!, "email" :email, "useriSDriver": true,"userOnTrip" : false,"driverPickupModeEnabled" : false] as [String: Any]
+                    DataService.instance.createDBUser(uid: (user?.uid)!, userData: userData, isDriver: true)
+                }
+            }
+            self.dismiss(animated: true, completion: nil)
+            print("User created with Firebase")
+        }//end Auth create user
+        
+       
+        
+    }//end login signup preseed
+    
 //--Gestures and animations
     func tapToDismissKeyboard() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(taptoDismiss(_:)))

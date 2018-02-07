@@ -95,6 +95,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="fd2-MN-Tyo"/>
+                                                        <constraint firstAttribute="width" constant="327" id="yFs-54-5NY"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -120,6 +121,9 @@
                                             <state key="normal" title="Signup/Login">
                                                 <color key="titleColor" red="1" green="0.58823529411764708" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="login_sognupPresed:" destination="KJ1-kx-cLJ" eventType="touchUpInside" id="igZ-Xc-guB"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -158,6 +162,7 @@
                     <connections>
                         <outlet property="emailField" destination="I63-5r-DFY" id="uCY-fb-HuI"/>
                         <outlet property="passwordField" destination="MtM-ZG-EKo" id="klX-6K-PSt"/>
+                        <outlet property="segmantedControl" destination="TRb-UK-jxf" id="YGn-lQ-ndC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg2-3D-E5x" userLabel="First Responder" sceneMemberID="firstResponder"/>
