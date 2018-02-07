@@ -73,6 +73,12 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let userLocationRaduis = MKCoordinateRegionMakeWithDistance(usercurrentLocation, locationRadius * 2.0, locationRadius * 2.0)
         mapview.setRegion(userLocationRaduis, animated: true)
     }
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        UpdateService.instance.updateUserLocation(withCoordinate: userLocation.coordinate) { (true) in
+            //
+        }
+        UpdateService.instance.updateDriverLocation(withCoordinate: userLocation.coordinate)
+    }
     
 
 

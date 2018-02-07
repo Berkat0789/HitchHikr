@@ -17,6 +17,7 @@
 		B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */; };
 		B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CC2028BF79001B7A0D /* circleView.swift */; };
 		B455E9CF2028C11C001B7A0D /* roundedShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */; };
+		B493CE50202B7E930015C0EF /* updateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B493CE4F202B7E930015C0EF /* updateService.swift */; };
 		B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A030902029F36F00F48A52 /* SWRevealViewController.m */; };
 		B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03093202A2A9B00F48A52 /* hamburgerMenuVC.swift */; };
 		B4A03096202A366E00F48A52 /* paymentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03095202A366E00F48A52 /* paymentsVC.swift */; };
@@ -46,6 +47,7 @@
 		B455E9CA2028BDD1001B7A0D /* roundedShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowView.swift; sourceTree = "<group>"; };
 		B455E9CC2028BF79001B7A0D /* circleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleView.swift; sourceTree = "<group>"; };
 		B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundedShadowButton.swift; sourceTree = "<group>"; };
+		B493CE4F202B7E930015C0EF /* updateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateService.swift; sourceTree = "<group>"; };
 		B4A0308F2029F36E00F48A52 /* HitchHikr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HitchHikr-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4A030902029F36F00F48A52 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		B4A030912029F36F00F48A52 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				B4A030A5202A622D00F48A52 /* DataService.swift */,
+				B493CE4F202B7E930015C0EF /* updateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */,
 				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
 				B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */,
+				B493CE50202B7E930015C0EF /* updateService.swift in Sources */,
 				B455E9C52028AF52001B7A0D /* HomeVC.swift in Sources */,
 				B4A0309C202A374E00F48A52 /* settingsVC.swift in Sources */,
 				B4A030A6202A622D00F48A52 /* DataService.swift in Sources */,
