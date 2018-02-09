@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import MapKit
 let FirebaseReference = Database.database().reference()
 
 class DataService {
@@ -27,6 +28,26 @@ class DataService {
         
     }//--end createDBUser
 
+//--Get user Location
     
+    func getDriverCoordinateforAnnotation(completed: @escaping (_ annotation: MKAnnotation ) -> ()) {
+        var Driverannotaiton: MKAnnotation!
+        DB_Reference_Drivers.observeSingleEvent(of: .value) { (driverSnap) in
+            guard let driverSnap = driverSnap.children.allObjects as? [DataSnapshot] else {return}
+            
+            for driver in driverSnap {
+                if driver.hasChild("coordinate") {
+                    guard let driverDict = driver.value as? Dictionary<String, Any> else {return}
+                    let coordinateArray = driverDict["coordinate"] as! NSArray
+                    let driverCoordinate = CLLocationCoordinate2D(latitude: coordinateArray[0] as! CLLocationDegrees, longitude: coordinateArray[1] as! CLLocationDegrees)
+                    let driverAnno = driverAnnotation(coordinate: driverCoordinate, ID: driver.key)
+                    Driverannotaiton = driverAnno
+                }
+            }//end loop
+            completed(Driverannotaiton)
+        }//--End observe
+        
+        
+    }
     
-}
+}//End class

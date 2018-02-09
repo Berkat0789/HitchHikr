@@ -20,6 +20,7 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var locationAuth  = CLLocationManager.authorizationStatus()
     var locationRadius: Double = 1000
+    var driverAnnotation: MKAnnotation!
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
     
@@ -35,6 +36,11 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         mapview.delegate = self
         AuthorizeLocationService()
+        
+        DataService.instance.getDriverCoordinateforAnnotation { (returnedDriverAnnotaton) in
+            self.driverAnnotation = returnedDriverAnnotaton
+            self.mapview.addAnnotation(self.driverAnnotation)
+        }
     }//--End view did load
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +54,14 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 //--Protocol conforming function
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         GetUserCurrentLocation()
+    }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotation = annotation as? driverAnnotation
+        let identifier = "driver"
+        let view: MKAnnotationView
+        view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        view.image = UIImage(named: "driverAnnotation")
+        return view
     }
     
 //--Actions

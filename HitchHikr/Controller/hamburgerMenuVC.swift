@@ -20,13 +20,12 @@ class hamburgerMenuVC: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
 //--Variables and array
     let currentuserID = Auth.auth().currentUser?.uid
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.revealViewController().rearViewRevealWidth = self.view.frame.width - 40
 
-    }//--end controller
+}//--end controller
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         switchSatus.isOn = false
@@ -46,7 +45,6 @@ class hamburgerMenuVC: UIViewController {
             AccountType.text = ""
             loginButton.setTitle("logout", for: .normal)
         }
-        
     }
 //--View functions
     func observeRidersandDrivers() {
@@ -59,12 +57,11 @@ class hamburgerMenuVC: UIViewController {
                     self.AccountType.text = "Rider"
             }
         }//end for loop
-            
     }//end database observe
-   //--Observe Drivers
+        
+//--Observe Drivers
         DataService.instance.DB_Reference_Drivers.observeSingleEvent(of: .value) { (DriverSnapShot) in
             guard let DriverSnapShot = DriverSnapShot.children.allObjects as? [DataSnapshot] else {return}
-            
             for driver in DriverSnapShot {
                 let switchStatus = driver.childSnapshot(forPath: "driverPickupModeEnabled").value as! Bool
                 if driver.key == Auth.auth().currentUser?.uid {
@@ -72,16 +69,12 @@ class hamburgerMenuVC: UIViewController {
                     self.switchSatus.isHidden = false
                     self.switchSatus.isOn = switchStatus
                     self.pickupModeSttus.isHidden = false
-                    
                 }
             }//end for loop
         }//end driver observe
-    
 }//-- end observe riders and drivers
     
-    
 //--Actions
-    
     @IBAction func switchToggled(_ sender: Any) {
         if switchSatus.isOn {
             pickupModeSttus.text = "Pickup mode enabled"

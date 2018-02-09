@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42B6C46202CDA7C008F1E6A /* driverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B6C45202CDA7C008F1E6A /* driverAnnotation.swift */; };
 		B42F7DB92028AAAC00DCF2EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42F7DB82028AAAC00DCF2EB /* AppDelegate.swift */; };
 		B42F7DBE2028AAAC00DCF2EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42F7DBC2028AAAC00DCF2EB /* Main.storyboard */; };
 		B42F7DC02028AAAC00DCF2EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42F7DBF2028AAAC00DCF2EB /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		1FF5454021D0464E8DFB13F3 /* Pods-HitchHikr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHikr.release.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHikr/Pods-HitchHikr.release.xcconfig"; sourceTree = "<group>"; };
 		8CC98992B90FFB2F4F6ED4DF /* Pods-HitchHikr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HitchHikr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HitchHikr/Pods-HitchHikr.debug.xcconfig"; sourceTree = "<group>"; };
+		B42B6C45202CDA7C008F1E6A /* driverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverAnnotation.swift; sourceTree = "<group>"; };
 		B42F7DB52028AAAC00DCF2EB /* HitchHikr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitchHikr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42F7DB82028AAAC00DCF2EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B42F7DBD2028AAAC00DCF2EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				B455E9CC2028BF79001B7A0D /* circleView.swift */,
 				B455E9CE2028C11C001B7A0D /* roundedShadowButton.swift */,
 				B4A0309F202A454000F48A52 /* RoundedtextField.swift */,
+				B42B6C45202CDA7C008F1E6A /* driverAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */,
 				B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */,
 				B42F7DB92028AAAC00DCF2EB /* AppDelegate.swift in Sources */,
+				B42B6C46202CDA7C008F1E6A /* driverAnnotation.swift in Sources */,
 				B455E9C92028B727001B7A0D /* gradientView.swift in Sources */,
 				B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */,
 				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
