@@ -538,8 +538,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Zu-dAh">
-                                                        <rect key="frame" x="20" y="4" width="307" height="17"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you going" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Zu-dAh">
+                                                        <rect key="frame" x="20" y="3" width="307" height="19"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -560,6 +560,55 @@
                                     <constraint firstAttribute="trailing" secondItem="xZe-oZ-VkB" secondAttribute="trailing" constant="8" id="ks4-iW-NrA"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wrI-QP-ddJ">
+                                <rect key="frame" x="16" y="184" width="343" height="327"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="327" id="QF6-65-jvn"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="60" id="zqX-0L-zR6" customClass="locationCell" customModule="HitchHikr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zqX-0L-zR6" id="nm7-PM-7Dh">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montclair Bare burger " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsG-cR-PVp">
+                                                    <rect key="frame" x="15" y="19" width="313" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="KXn-fE-r58"/>
+                                                        <constraint firstAttribute="width" constant="313" id="fU0-GU-2zg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="222 MCcarter HWY newark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2i-Jb-IEa">
+                                                    <rect key="frame" x="15" y="38" width="313" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="E9K-5b-X4E"/>
+                                                        <constraint firstAttribute="width" constant="313" id="XXn-Pa-P6B"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hsG-cR-PVp" firstAttribute="leading" secondItem="nm7-PM-7Dh" secondAttribute="leadingMargin" id="2Fy-oG-on5"/>
+                                                <constraint firstItem="Z2i-Jb-IEa" firstAttribute="leading" secondItem="nm7-PM-7Dh" secondAttribute="leading" constant="15" id="3vc-i4-plS"/>
+                                                <constraint firstItem="Z2i-Jb-IEa" firstAttribute="top" secondItem="nm7-PM-7Dh" secondAttribute="top" constant="38" id="er0-Ci-J3N"/>
+                                                <constraint firstItem="hsG-cR-PVp" firstAttribute="top" secondItem="nm7-PM-7Dh" secondAttribute="topMargin" constant="8" id="qB0-uq-QZS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="locationDetail" destination="Z2i-Jb-IEa" id="ZZt-ix-NSV"/>
+                                            <outlet property="searchResultText" destination="hsG-cR-PVp" id="DEN-So-pEg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -567,6 +616,8 @@
                             <constraint firstItem="xTK-O0-ZPo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bvm-2w-boj"/>
                             <constraint firstItem="vfI-20-JwN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Cp0-QW-APK"/>
                             <constraint firstItem="Du7-rC-Kb2" firstAttribute="top" secondItem="xTK-O0-ZPo" secondAttribute="bottom" constant="8" id="DW1-4a-CQN"/>
+                            <constraint firstItem="wrI-QP-ddJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ir5-CC-3X1"/>
+                            <constraint firstItem="wrI-QP-ddJ" firstAttribute="top" secondItem="Du7-rC-Kb2" secondAttribute="bottom" constant="8" id="Lgi-DC-6dd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vfI-20-JwN" secondAttribute="bottom" constant="20" id="SuB-jn-MaG"/>
                             <constraint firstItem="vfI-20-JwN" firstAttribute="top" secondItem="bJu-lw-lQT" secondAttribute="bottom" constant="8" id="Vwg-tH-Rlg"/>
                             <constraint firstItem="xTK-O0-ZPo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vx0-5d-oqZ"/>
@@ -575,6 +626,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vfI-20-JwN" secondAttribute="trailing" constant="16" id="hGN-1l-Ebn"/>
                             <constraint firstItem="1mf-04-jV7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lWL-hY-1KZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1mf-04-jV7" secondAttribute="trailing" id="oYW-a4-Zqw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wrI-QP-ddJ" secondAttribute="trailing" constant="16" id="q7q-Uc-MTQ"/>
                             <constraint firstItem="1mf-04-jV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="txa-Tc-hNb"/>
                             <constraint firstItem="Du7-rC-Kb2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uU5-Fj-hlm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1mf-04-jV7" secondAttribute="bottom" id="vfV-20-Jzz"/>
@@ -582,13 +634,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="centerMapButton" destination="bJu-lw-lQT" id="axi-hE-IBj"/>
+                        <outlet property="destinationTextield" destination="vbh-Zu-dAh" id="bg0-cL-XIW"/>
                         <outlet property="mapview" destination="1mf-04-jV7" id="fDJ-F4-d0W"/>
                         <outlet property="menuButton" destination="060-BM-b9m" id="iBT-FH-LeJ"/>
+                        <outlet property="tableView" destination="wrI-QP-ddJ" id="qu9-G6-gIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-830"/>
+            <point key="canvasLocation" x="136.80000000000001" y="-830.73463268365822"/>
         </scene>
         <!--Your TripsVC-->
         <scene sceneID="YlA-4W-Rop">

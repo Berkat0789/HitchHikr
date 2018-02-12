@@ -36,6 +36,7 @@ class DataService {
             guard let driverSnap = driverSnap.children.allObjects as? [DataSnapshot] else {return}
             
             for driver in driverSnap {
+            if driver.hasChild("useriSDriver") {
                 if driver.hasChild("coordinate") {
                     guard let driverDict = driver.value as? Dictionary<String, Any> else {return}
                     let coordinateArray = driverDict["coordinate"] as! NSArray
@@ -43,7 +44,8 @@ class DataService {
                     let driverAnno = driverAnnotation(coordinate: driverCoordinate, ID: driver.key)
                     Driverannotaiton = driverAnno
                 }
-            }//end loop
+            }
+        }//end loop
             completed(Driverannotaiton)
         }//--End observe
         
