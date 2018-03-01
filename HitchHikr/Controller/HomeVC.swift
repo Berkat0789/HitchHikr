@@ -25,8 +25,9 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     var locationAuth  = CLLocationManager.authorizationStatus()
     var locationRadius: Double = 1000
     var driverAnnotation: MKAnnotation!
-    
     var MatchItem: [MKMapItem] = [MKMapItem]()
+    var destinationPlacemark: MKPlacemark!
+    var route: MKRoute!
     
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "launchScreenIcon")!, iconInitialSize: CGSize(width: 80, height: 80), backgroundColor: UIColor.white)
     
@@ -53,7 +54,7 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
                 guard let DriverSnap = DriverSnap.children.allObjects as? [DataSnapshot] else {return}
                 
                 for driver in DriverSnap {
-                    if driver.childSnapshot(forPath: "driverPickupModeEnabled").value as! Bool == false {
+                    if driver.childSnapshot(forPath: "driverPickupModeEnabled").value as! Bool == true {
                         for annotation in self.mapview.annotations {
                             self.mapview.removeAnnotation(annotation)
                         }
@@ -81,12 +82,26 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         GetUserCurrentLocation()
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotation = annotation as? driverAnnotation
+        if let annotation = annotation as? driverAnnotation {
         let identifier = "driver"
         let view: MKAnnotationView
         view = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
         view.image = UIImage(named: "driverAnnotation")
-        return view
+            return view
+        } else if let userannotation = annotation as? userAnnotation {
+            let identifier = "user"
+            let view: MKAnnotationView!
+            view = MKAnnotationView(annotation: userannotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "sample-photo")
+            return view
+        } else if let destinationAnnotation = annotation as? destinationAnnotation {
+            let identifier = "destination"
+            let view: MKAnnotationView!
+            view = MKAnnotationView(annotation: destinationAnnotation, reuseIdentifier: identifier)
+            view.image = UIImage(named: "destinationAnnotation")
+            return view
+        }
+        return nil
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MatchItem.count
@@ -102,7 +117,16 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("location Selected")
+        guard let userlocaton = locationManager.location?.coordinate else {return}
+        let annotation = userAnnotation(coordinat: userlocaton, ID: (Auth.auth().currentUser?.uid)!)
+        mapview.addAnnotation(annotation)
+        let selectedLocation = MatchItem[indexPath.row]
+        //add destination to firebase
+        DataService.instance.DB_Reference_Users.child((Auth.auth().currentUser?.uid)!).updateChildValues(["destination":["longitude": selectedLocation.placemark.coordinate.longitude, "latitude": selectedLocation.placemark.coordinate.latitude]])
+        dropPin(placemark: selectedLocation.placemark)
+        getPolyLineforDestination(formkMapItem: selectedLocation)
+        tableView.isHidden = true
+      
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == destinationTextield {
@@ -117,13 +141,21 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //
+        // MatchItem = []
+        self.tableView.reloadData()
+        GetUserCurrentLocation()
     }
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         MatchItem = []
         self.tableView.reloadData()
         GetUserCurrentLocation()
         return true
+    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: self.route.polyline)
+        renderer.strokeColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        renderer.lineWidth = 3
+        return renderer
     }
     
 //--Actions
@@ -134,24 +166,49 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     //Gestures and animatons
     
 //--Selectors
-    
 //--View update functions
+    func dropPin(placemark: MKPlacemark) {
+        destinationPlacemark = placemark
+        for annotation in mapview.annotations {
+            mapview.removeAnnotation(annotation)
+        }
+    //Set destination annotation
+        let annotation = destinationAnnotation(coordinate: placemark.coordinate, identifier: (Auth.auth().currentUser?.uid)!)
+        annotation.coordinate = placemark.coordinate
+        mapview.addAnnotation(annotation)
+    }
     func performSearch() {
-        MatchItem.removeAll()
-        let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = destinationTextield.text
-        request.region = mapview.region
-        let search = MKLocalSearch(request: request)
+    MatchItem = []
+    let searchrequest = MKLocalSearchRequest()
+    searchrequest.naturalLanguageQuery = destinationTextield.text
+    searchrequest.region = mapview.region
+    let search  = MKLocalSearch(request: searchrequest)
         search.start { (response, error) in
             if error != nil {
                 print(error!.localizedDescription)
             }else if response?.mapItems.count == 0 {
-                print("no results Found")
-            } else {
-                for mapitems in response!.mapItems {
-                    self.MatchItem.append(mapitems as MKMapItem)
+                print("No results found")
+            }else {
+                for mapItem in response!.mapItems {
+                    self.MatchItem.append(mapItem as MKMapItem)
                     self.tableView.reloadData()
                 }
+            }
+        }
+    }
+    func getPolyLineforDestination(formkMapItem  MapItem: MKMapItem) {
+        let directionRequest = MKDirectionsRequest()
+        directionRequest.source = MKMapItem.forCurrentLocation()
+        directionRequest.destination = MapItem
+        directionRequest.transportType = MKDirectionsTransportType.automobile
+        let direction = MKDirections(request: directionRequest)
+        direction.calculate { (response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                //best route to destination
+                self.route = response?.routes[0]
+                self.mapview.add(self.route.polyline)
             }
         }
     }
@@ -159,7 +216,6 @@ class HomeVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     func AuthorizeLocationService() {
         if locationAuth == .notDetermined {
             locationManager.requestAlwaysAuthorization()
-            
         } else {
             return
         }

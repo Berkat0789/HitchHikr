@@ -27,7 +27,6 @@ class circleView: UIView {
         self.layer.cornerRadius = self.frame.width / 2
         self.layer.borderWidth = 1.5
         self.layer.borderColor = borderColor?.cgColor
-        
     }
 
 }

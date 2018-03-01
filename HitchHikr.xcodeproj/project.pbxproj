@@ -31,6 +31,8 @@
 		B4A030A2202A499700F48A52 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */; };
 		B4A030A4202A60FE00F48A52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4A030A3202A60FE00F48A52 /* GoogleService-Info.plist */; };
 		B4A030A6202A622D00F48A52 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A030A5202A622D00F48A52 /* DataService.swift */; };
+		B4A4157D20485EC400E4E11F /* userAnnotaiton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4157C20485EC400E4E11F /* userAnnotaiton.swift */; };
+		B4A4157F2048620C00E4E11F /* destinationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A4157E2048620C00E4E11F /* destinationAnnotation.swift */; };
 		CCD0E89767D5F967A9C68ED5 /* Pods_HitchHikr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		B4A030A1202A499700F48A52 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		B4A030A3202A60FE00F48A52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4A030A5202A622D00F48A52 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B4A4157C20485EC400E4E11F /* userAnnotaiton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userAnnotaiton.swift; sourceTree = "<group>"; };
+		B4A4157E2048620C00E4E11F /* destinationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = destinationAnnotation.swift; sourceTree = "<group>"; };
 		EF0A0218BCA2914DBA472AB1 /* Pods_HitchHikr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HitchHikr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +164,8 @@
 				B4A0309F202A454000F48A52 /* RoundedtextField.swift */,
 				B42B6C45202CDA7C008F1E6A /* driverAnnotation.swift */,
 				B4189E31203103C80040C0D1 /* locationCell.swift */,
+				B4A4157C20485EC400E4E11F /* userAnnotaiton.swift */,
+				B4A4157E2048620C00E4E11F /* destinationAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				B455E9CB2028BDD1001B7A0D /* roundedShadowView.swift in Sources */,
 				B455E9C72028B122001B7A0D /* roundedImage.swift in Sources */,
 				B4189E32203103C80040C0D1 /* locationCell.swift in Sources */,
+				B4A4157D20485EC400E4E11F /* userAnnotaiton.swift in Sources */,
 				B4A030A2202A499700F48A52 /* KeyboardBoundView.swift in Sources */,
 				B4A030922029F36F00F48A52 /* SWRevealViewController.m in Sources */,
 				B4A03094202A2A9B00F48A52 /* hamburgerMenuVC.swift in Sources */,
@@ -350,6 +357,7 @@
 				B42B6C46202CDA7C008F1E6A /* driverAnnotation.swift in Sources */,
 				B455E9C92028B727001B7A0D /* gradientView.swift in Sources */,
 				B4A030A0202A454000F48A52 /* RoundedtextField.swift in Sources */,
+				B4A4157F2048620C00E4E11F /* destinationAnnotation.swift in Sources */,
 				B455E9CD2028BF79001B7A0D /* circleView.swift in Sources */,
 				B4A03098202A36CB00F48A52 /* yourTripsVC.swift in Sources */,
 				B493CE50202B7E930015C0EF /* updateService.swift in Sources */,
@@ -497,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92BBSY6F64;
 				INFOPLIST_FILE = HitchHikr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheknightMarket.HitchHikr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
